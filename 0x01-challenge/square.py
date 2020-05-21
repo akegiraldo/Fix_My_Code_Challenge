@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-File to manage of a square
-"""
+""" File to manage of a square """
 
 
 class Square():
-    """Class of a square"""
+    """ Class of a square """
     width = 0
     height = 0
 
@@ -20,7 +18,7 @@ class Square():
 
     def perimeter_of_my_square(self):
         """ Perimeter of the square """
-        return (self.width * 2) + (self.height * 2)
+        return (self.width + self.height) * 2
 
     def __str__(self):
         """ Modify the form to print the square """
