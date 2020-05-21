@@ -582,1214 +582,1531 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 274ms (Views: 252.2ms | ActiveRecord: 3.1ms)
 
 
-  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
-            FROM sqlite_master
-            WHERE name='index_comments_on_post_id' AND type='index'
-            UNION ALL
-            SELECT sql
-            FROM sqlite_temp_master
-            WHERE name='index_comments_on_post_id' AND type='index'
-[0m
-  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
-            FROM sqlite_master
-            WHERE name='index_installs_on_reset_password_token' AND type='index'
-            UNION ALL
-            SELECT sql
-            FROM sqlite_temp_master
-            WHERE name='index_installs_on_reset_password_token' AND type='index'
-[0m
-  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
-            FROM sqlite_master
-            WHERE name='index_installs_on_email' AND type='index'
-            UNION ALL
-            SELECT sql
-            FROM sqlite_temp_master
-            WHERE name='index_installs_on_email' AND type='index'
-[0m
-  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
-            FROM sqlite_master
-            WHERE name='index_users_on_reset_password_token' AND type='index'
-            UNION ALL
-            SELECT sql
-            FROM sqlite_temp_master
-            WHERE name='index_users_on_reset_password_token' AND type='index'
-[0m
-  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
-            FROM sqlite_master
-            WHERE name='index_users_on_email' AND type='index'
-            UNION ALL
-            SELECT sql
-            FROM sqlite_temp_master
-            WHERE name='index_users_on_email' AND type='index'
-[0m
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:08:58 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:01:46 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (6.6ms)
-Completed 200 OK in 377ms (Views: 367.6ms | ActiveRecord: 0.4ms)
+  Rendered posts/index.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 392ms (Views: 383.4ms | ActiveRecord: 1.4ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:09:13 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:09:25 -0500
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:01:49 -0500
 Processing by PostsController#show as HTML
   Parameters: {"id"=>"2"}
-Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:09:25 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.6ms)
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-11 17:11:21 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:11:21 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (9.6ms)
-Started PUT "/__web_console/repl_sessions/68463608dbe8d86f73de1a54f67ae8ee" for 127.0.0.1 at 2020-05-11 17:11:28 -0500
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:11:51 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.4ms)
-Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:11:54 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:11:55 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-11 17:11:58 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:11:58 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.0ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.4ms)
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:26 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:27 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:28 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:28 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:28 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:29 -0500
-Started POST "/__web_console/repl_sessions/62dff5776b12ffbf1e6a7f365715bc62/trace" for 127.0.0.1 at 2020-05-11 17:13:30 -0500
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:13:44 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.9ms)
-Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:13:46 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:13:46 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (8.5ms)
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:14:48 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.2ms)
-Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/about" for 127.0.0.1 at 2020-05-11 17:14:50 -0500
-Processing by PagesController#about as HTML
-  Rendering pages/about.html.erb within layouts/application
-  Rendered pages/about.html.erb within layouts/application (0.2ms)
-Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:14:55 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.6ms)
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:15:01 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (10.6ms)
-Started GET "/about" for 127.0.0.1 at 2020-05-11 17:18:37 -0500
-Processing by PagesController#about as HTML
-  Rendering pages/about.html.erb within layouts/application
-  Rendered pages/about.html.erb within layouts/application (0.2ms)
-Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:18:49 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (2.0ms)
-Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:18:54 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:18:54 -0500
-  
-SyntaxError (/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-/var/lib/gems/2.7.0/gems/devise-4.2.0/app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-):
-  
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '{', expecting `end'
-...ion only: [:create, :destroy] { request.env["devise.skip_tim...
-...                              ^
-devise (4.2.0) app/controllers/devise/sessions_controller.rb:5: syntax error, unexpected '}', expecting `end'
-..."devise.skip_timeout"] = true }
-...                              ^
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:477:in `block in load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:662:in `new_constants_in'
-activesupport (5.0.1) lib/active_support/dependencies.rb:476:in `load_file'
-activesupport (5.0.1) lib/active_support/dependencies.rb:375:in `block in require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `block in load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:12:in `block in loading'
-activesupport (5.0.1) lib/active_support/concurrency/share_lock.rb:150:in `exclusive'
-activesupport (5.0.1) lib/active_support/dependencies/interlock.rb:11:in `loading'
-activesupport (5.0.1) lib/active_support/dependencies.rb:37:in `load_interlock'
-activesupport (5.0.1) lib/active_support/dependencies.rb:358:in `require_or_load'
-activesupport (5.0.1) lib/active_support/dependencies.rb:511:in `load_missing_constant'
-activesupport (5.0.1) lib/active_support/dependencies.rb:203:in `const_missing'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `const_get'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:270:in `block in constantize'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-activesupport (5.0.1) lib/active_support/dependencies.rb:583:in `get'
-activesupport (5.0.1) lib/active_support/dependencies.rb:614:in `constantize'
-actionpack (5.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
-actionpack (5.0.1) lib/action_dispatch/routing/mapper.rb:46:in `serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
-warden (1.2.6) lib/warden/manager.rb:34:in `catch'
-warden (1.2.6) lib/warden/manager.rb:34:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.2) lib/puma/configuration.rb:225:in `call'
-puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.2) lib/puma/server.rb:415:in `process_client'
-puma (3.6.2) lib/puma/server.rb:275:in `block in run'
-puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (1.9ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
-  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
-  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (9.7ms)
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:21:12 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:21:12 -0500
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (0.7ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
-Completed 200 OK in 41ms (Views: 32.9ms | ActiveRecord: 0.5ms)
-
-
-Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:22:03 -0500
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vPTFKj5i+c4yjc7LVqI71n+4c7fZMKQRjl/8LnELiDMJR1hzhT7NxhQPD+uP0PT5eJiUSIenpfjGwzE0/GqK3g==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-11 22:22:03.130967018 UTC], ["last_sign_in_at", 2017-09-14 23:03:01.25246 UTC], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 4], ["updated_at", 2020-05-11 22:22:03.13187252 UTC], ["id", 1]]
-  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/posts/2
-Completed 302 Found in 126ms (ActiveRecord: 9.2ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:22:03 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendering posts/show.html.erb within layouts/application
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
   Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (5.9ms)
-  Rendered posts/show.html.erb within layouts/application (16.7ms)
-Completed 200 OK in 35ms (Views: 28.1ms | ActiveRecord: 1.1ms)
+  Rendered comments/_form.html.erb (13.6ms)
+  Rendered posts/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:22:30 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.6ms)
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-11 17:22:32 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering posts/show.html.erb within layouts/application
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
-  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
-  Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (2.1ms)
-  Rendered posts/show.html.erb within layouts/application (6.1ms)
-Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.9ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:22:36 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 12:01:55 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qlijpALAHFLml95Slide9XGtrwy1Ur0DbH6nFISfrwfIDAkt6pfNeY0reYY9RiY2bE8Xs+TsK6XoGvpB32G8Jg=="}
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-Completed 200 OK in 38ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
 
 
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:22:37 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:01:55 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:01:57 -0500
 Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:01:57 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:29:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (24.2ms)
+  Rendered posts/show.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 181ms (Views: 164.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:34:12 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered posts/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:34:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (4.4ms)
+  Rendered posts/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:34:56 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 31ms (Views: 19.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:34:57 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nH9s4aRdZcQ4X6BeOM7m2Z9B1dsRbwTsv0HsPIaYP9dGe8O7dbrte0P5v0pbAKEunKaa5QbAdkgvUa43hfoYfQ==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 17:34:57.880050299 UTC], ["last_sign_in_at", 2017-09-14 23:03:01.25246 UTC], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 4], ["updated_at", 2020-05-21 17:34:57.881459625 UTC], ["id", 1]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 131ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:34:57 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-21 12:35:01 -0500
+Processing by PostsController#edit as HTML
   Parameters: {"id"=>"2"}
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.4ms)
+  Rendered posts/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2020-05-21 12:35:07 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B189M4unKWLmCELN8c7VJ+LFZHsseAAn/+yORaGUBdZXya554IhaG2vWRu95DZcUHnQMRaQIKDWE6UPzWRjsOg==", "post"=>{"title"=>"80% of batch 01 students are already working in the tech industry as software engineers. WOOT", "body"=>"Students have landed jobs and internships in companies like Tesla, Apple, NVIDIA, Scality, Dropbox, Docker, Shopkick and so many more exciting startups. Our program lasts a period of 2 years, but many of our students already have jobs within the first year! How cool is that?\r\n\r\nIf you haven’t checked out the video of our students story yet, take a few minutes and watch it here."}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "80% of batch 01 students are already working in the tech industry as software engineers. WOOT"], ["updated_at", 2020-05-21 17:35:07.979888041 UTC], ["id", 2]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 13ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:35:07 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:35:37 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 39ms (Views: 25.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-05-21 12:35:49 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Utp/m5A5t/xeup65jxcX/CwwtVut1RHVIIwz+rA480gH+sNZ9qs2Y0uNJJ+bC2kG0okHJgymxFcxy/P8xA+dA==", "post"=>{"title"=>"Kevin probando", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Kevin probando"], ["body", "Estoy probando la creación de un post"], ["created_at", 2020-05-21 17:35:49.868015885 UTC], ["updated_at", 2020-05-21 17:35:49.868015885 UTC]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 20ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:35:49 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (11.0ms)
+  Rendered posts/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:38:53 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.6ms)
+  Rendered posts/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:38:58 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:38:59 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:39:26 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:39:35 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2020-05-21 12:39:38 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered posts/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:39:47 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:40:14 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.9ms)
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:41:02 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (30.5ms)
+  Rendered posts/new.html.erb within layouts/application (31.1ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `selected' for #<#<Class:0x00007fd23cb56b50>:0x00007fd23cee5a78>
+Did you mean?  select):
+    11:   <% end %>
+    12:   <p>
+    13:     <%= f.label :status %>
+    14:     <%= f.check_box selected :status %>
+    15:   </p>
+    16:   <p>
+    17:     <%= f.label :title %>
+  
+app/views/posts/_form.html.erb:14:in `block in _app_views_posts__form_html_erb__2862816859817226603_35960'
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb__2862816859817226603_35960'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___2462620068440816004_35940'
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:41:14 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (30.3ms)
+  Rendered posts/new.html.erb within layouts/application (31.0ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `selected' for #<#<Class:0x00007fd23cb56b50>:0x00007fd23d5be6b0>
+Did you mean?  select):
+    11:   <% end %>
+    12:   <p>
+    13:     <%= f.label :status %>
+    14:     <%= selected f.check_box :status %>
+    15:   </p>
+    16:   <p>
+    17:     <%= f.label :title %>
+  
+app/views/posts/_form.html.erb:14:in `block in _app_views_posts__form_html_erb__2862816859817226603_36720'
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb__2862816859817226603_36720'
+app/views/posts/new.html.erb:4:in `_app_views_posts_new_html_erb___2462620068440816004_36700'
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.7.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.4ms)
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:41:19 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:41:36 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:41:55 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:41:57 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered posts/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-21 12:41:59 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:14 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OI3khgifbt0lF01HHUP+0Z4sRYtXBcDua1Ep94KfC3xoG3fMY7AdpKjJSWWVgLziYp0ttd916PwQVORBehPikA==", "post"=>{"status"=>"1", "title"=>"80% of batch 01 students are already working in the tech industry as software engineers. WOOT!", "body"=>"Students have landed jobs and internships in companies like Tesla, Apple, NVIDIA, Scality, Dropbox, Docker, Shopkick and so many more exciting startups. Our program lasts a period of 2 years, but many of our students already have jobs within the first year! How cool is that?\r\n\r\nIf you haven’t checked out the video of our students story yet, take a few minutes and watch it here."}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "80% of batch 01 students are already working in the tech industry as software engineers. WOOT!"], ["updated_at", 2020-05-21 17:42:14.449244972 UTC], ["id", 2]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 19ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
   Rendered collection of templates [0 times] (0.0ms)
   Rendered comments/_form.html.erb (1.6ms)
-  Rendered posts/show.html.erb within layouts/application (6.7ms)
-Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.8ms)
+  Rendered posts/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.4ms)
 
 
-Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-11 17:22:38 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:42:23 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:42:24 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.4ms)
+  Rendered posts/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 12:42:26 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.5ms)
+  Rendered posts/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/3" for 127.0.0.1 at 2020-05-21 12:42:29 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NjCy779WvaelpuuinsIT98Q9xD72fVMCCKyLY/Egfu0LHjvpVNZ+X177yEfTWeEKR5fE3YzzHBsVy7JUUs/dVg==", "post"=>{"status"=>"1", "title"=>"Kevin probando", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 1], ["updated_at", 2020-05-21 17:42:29.201006725 UTC], ["id", 3]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 15ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:42:29 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  Rendered posts/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 12:42:31 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:42:34 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:45 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.9ms)
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-21 12:42:47 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.1ms)
+  Rendered posts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:52 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n1xGI9YrCb4xySnkDN+AyK5JaUZEYElzW/tXq1qaNtrPytVpvQR6x7wXLcaEHML7UvgBeMwQYWEg/podohbfNg==", "post"=>{"status"=>"0", "title"=>"80% of batch 01 students are already working in the tech industry as software engineers. WOOT!", "body"=>"Students have landed jobs and internships in companies like Tesla, Apple, NVIDIA, Scality, Dropbox, Docker, Shopkick and so many more exciting startups. Our program lasts a period of 2 years, but many of our students already have jobs within the first year! How cool is that?\r\n\r\nIf you haven’t checked out the video of our students story yet, take a few minutes and watch it here."}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 0], ["updated_at", 2020-05-21 17:42:52.806480364 UTC], ["id", 2]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 20ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  Rendered posts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-21 12:42:56 -0500
 Processing by PostsController#edit as HTML
   Parameters: {"id"=>"2"}
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   Rendering posts/edit.html.erb within layouts/application
-  Rendered posts/_form.html.erb (1.8ms)
-  Rendered posts/edit.html.erb within layouts/application (2.6ms)
-Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+  Rendered posts/_form.html.erb (1.9ms)
+  Rendered posts/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:22:41 -0500
+Started PATCH "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:57 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/v8Z+Tx2WZ4iYPj9XyimONRzYBHUhSYlM9PjCBD4peKuaYqzV1kq56++/N/X6+QLKMIIL1z1DjdI1i6+6HRMDg==", "post"=>{"status"=>"0", "title"=>"80% of batch 01 students are already working in the tech industry as software engineers. WOOT!", "body"=>"Students have landed jobs and internships in companies like Tesla, Apple, NVIDIA, Scality, Dropbox, Docker, Shopkick and so many more exciting startups. Our program lasts a period of 2 years, but many of our students already have jobs within the first year! How cool is that?\r\n\r\nIf you haven’t checked out the video of our students story yet, take a few minutes and watch it here."}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:42:57 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered posts/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:42:59 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:43:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  Rendered posts/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 12:43:02 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.8ms)
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/3" for 127.0.0.1 at 2020-05-21 12:43:05 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2BlOIt5ssR5piMMslX3pTWicoSs3yf9I2i8+TbF/Wg/lN8ckNexy5pLV4MnY5huw6zahyE1HsFHHSAd6EpD5tA==", "post"=>{"status"=>"1", "title"=>"Kevin probando", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:43:05 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:43:27 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 12:48:03 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x5waXrS3Hi/7vXyBPe7ETrHRhfXMBEgsgRJwc4ownsbBkrJrPTt0SA41Z10C6z0Ynja4UkNwlMe7GJ/hiXHXUQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:48:03 -0500
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
   Rendered posts/index.html.erb within layouts/application (1.2ms)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.3ms)
-
-
-Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-11 17:22:43 -0500
-Processing by Devise::SessionsController#destroy as HTML
-  Parameters: {"authenticity_token"=>"1mfy6mb2HWCFprMmuFv4Tb5mCgqsIRllmHFyhWKSLGIaeKlbDkyHwiiGjYEFm+WPbQRTSX56vYf1af02rehC1Q=="}
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:22:43 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.4ms)
-Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:22:45 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:22:45 -0500
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (1.2ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:26:00 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:26:06 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (2.1ms)
-Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-11 17:27:07 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-11 17:27:07 -0500
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (0.8ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
-Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2020-05-11 17:27:10 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (0.9ms)
 Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/about" for 127.0.0.1 at 2020-05-11 17:28:14 -0500
-Processing by PagesController#about as HTML
-  Rendering pages/about.html.erb within layouts/application
-  Rendered pages/about.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-11 17:30:15 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:48:04 -0500
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (3.8ms)
-Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+  Rendered posts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
 
 
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-11 17:30:16 -0500
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:48:07 -0500
 Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   Rendering posts/show.html.erb within layouts/application
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
-  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
   Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (6.1ms)
-  Rendered posts/show.html.erb within layouts/application (15.2ms)
-Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 1.6ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  Rendered posts/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.5ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-11 18:16:21 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.6ms)
-Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-11 18:16:22 -0500
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:48:33 -0500
 Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   Rendering posts/show.html.erb within layouts/application
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
-  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
   Rendered collection of templates [0 times] (0.0ms)
   Rendered comments/_form.html.erb (1.7ms)
-  Rendered posts/show.html.erb within layouts/application (5.5ms)
-Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.4ms)
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.7ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-11 18:16:25 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:51:55 -0500
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.5ms)
-Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.3ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:10:14 -0500
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (6.6ms)
-Completed 200 OK in 192ms (Views: 182.0ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:10:19 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.0ms)
-Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-14 00:10:38 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering posts/show.html.erb within layouts/application
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
-  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
-  Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (13.5ms)
-  Rendered posts/show.html.erb within layouts/application (32.4ms)
-Completed 200 OK in 64ms (Views: 58.0ms | ActiveRecord: 0.9ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-14 00:10:44 -0500
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (1.3ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (6.2ms)
-Completed 200 OK in 32ms (Views: 20.7ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/about" for 127.0.0.1 at 2020-05-14 00:11:21 -0500
-Processing by PagesController#about as HTML
-  Rendering pages/about.html.erb within layouts/application
-  Rendered pages/about.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:11:23 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
-
-
-Started GET "/posts/1" for 127.0.0.1 at 2020-05-14 00:11:25 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering posts/show.html.erb within layouts/application
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
-  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
-  Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (1.9ms)
-  Rendered posts/show.html.erb within layouts/application (6.1ms)
-Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-14 00:11:54 -0500
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (1.2ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
-Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-14 00:12:01 -0500
-Processing by Devise::SessionsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kySyuKyq/4t7SgR19BGdZGxzF4VNiD22uomNEhEEl6K34/QhDPxINw8VjVytT0Zlpx4lyrcNjI7X2Gnfr+4tMQ==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-14 05:12:02.004953302 UTC], ["last_sign_in_at", 2020-05-11 22:22:03.130967 UTC], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 5], ["updated_at", 2020-05-14 05:12:02.005954331 UTC], ["id", 1]]
-  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 135ms (ActiveRecord: 8.7ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:12:02 -0500
-Processing by PostsController#index as HTML
-  Rendering posts/index.html.erb within layouts/application
-  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.5ms)
-  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/posts/2" for 127.0.0.1 at 2020-05-14 00:12:04 -0500
-Processing by PostsController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering posts/show.html.erb within layouts/application
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
-  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
-  Rendered collection of templates [0 times] (0.0ms)
-  Rendered comments/_form.html.erb (3.0ms)
-  Rendered posts/show.html.erb within layouts/application (9.0ms)
-Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-14 00:12:13 -0500
-Processing by PostsController#edit as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering posts/edit.html.erb within layouts/application
-  Rendered posts/_form.html.erb (3.7ms)
-  Rendered posts/edit.html.erb within layouts/application (5.1ms)
-Completed 200 OK in 47ms (Views: 35.5ms | ActiveRecord: 0.4ms)
-
-
-Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-14 00:12:29 -0500
-Processing by Devise::SessionsController#destroy as HTML
-  Parameters: {"authenticity_token"=>"O4/N/2fjV57VsAAmUWEd1SsfscW45r/HRA6t4HRgX+p8ke3/5JHIGgwLf/lCuw0fxua18ZBhK72nP+m521KBog=="}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 16ms (ActiveRecord: 0.4ms)
-
-
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:12:29 -0500
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:51:59 -0500
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
   Rendered posts/index.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.1ms)
 
 
-Started GET "/" for 127.0.0.1 at 2020-05-14 00:12:33 -0500
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:52:05 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:52:06 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pg84dPG2vblYYx0FZNhBrshzAbWKXv/StvNrvI+h76HqTfYBEwv4ZTwvNqH0blxv6PP7GMIDeJu78aBoomMe1A==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 17:52:06.441480807 UTC], ["last_sign_in_at", 2020-05-21 17:34:57.88005 UTC], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 5], ["updated_at", 2020-05-21 17:52:06.442247239 UTC], ["id", 1]]
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:06 -0500
 Processing by PostsController#index as HTML
   Rendering posts/index.html.erb within layouts/application
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
-  Rendered posts/index.html.erb within layouts/application (1.1ms)
-Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:52:08 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-05-21 12:52:10 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.2ms)
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/2" for 127.0.0.1 at 2020-05-21 12:52:14 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q/w+5lpoQiy+XDcLXufIlpn9X6K8tKGFJ4H7XK6JCbEA2RzJU/Gr1Kwz0Vm1qeyz3Fvn9n4iGxK/3NJtxbpnew==", "post"=>{"status"=>"1", "title"=>"80% of batch 01 students are already working in the tech industry as software engineers. WOOT!", "body"=>"Students have landed jobs and internships in companies like Tesla, Apple, NVIDIA, Scality, Dropbox, Docker, Shopkick and so many more exciting startups. Our program lasts a period of 2 years, but many of our students already have jobs within the first year! How cool is that?\r\n\r\nIf you haven’t checked out the video of our students story yet, take a few minutes and watch it here."}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 1], ["updated_at", 2020-05-21 17:52:14.572948029 UTC], ["id", 2]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 20ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2020-05-21 12:52:14 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.6ms)
+  Rendered posts/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:16 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 12:52:21 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s+i2aOetT3X937C8+LPTTCU3qW09WRlBdbrqND1wTk4+q1RXSLapQTb6YFIbiw3mvNmZwU+kV89Hj6fjrFhcSw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:21 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:24 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:52:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:52:49 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IJigyv+AcgyrJdx3pUJicGEFRBIXdh2LPtf6IZKIdYVXE65vg+sALImwtF54yd+ucaZfOjSHPjrNzVr8pzApAg==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 17:52:49.555366058 UTC], ["last_sign_in_at", 2020-05-21 17:52:06.44148 UTC], ["sign_in_count", 6], ["updated_at", 2020-05-21 17:52:49.556166289 UTC], ["id", 1]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 121ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:49 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:52:51 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.7ms)
+  Rendered posts/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 12:52:52 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/3" for 127.0.0.1 at 2020-05-21 12:52:55 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yZLWcLjWVYYAT1y8lyr9XRyBvb71hcjOO+6U1KWJtX27ma9AO7ty96E38FV++URyeKVF9E523WArxj1lw+1NxA==", "post"=>{"status"=>"0", "title"=>"Kevin probando", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 0], ["updated_at", 2020-05-21 17:52:55.518232172 UTC], ["id", 3]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 25ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:52:55 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.8ms)
+  Rendered posts/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:52:59 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 12:53:01 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.5ms)
+  Rendered posts/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:53:02 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 12:53:04 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oZoLfkTikl8/+2qXqK/HcmSr2yH75KZBjSMcbRezVDFhvSoWeuTOyQshSjMMg1PtCGn5fy+IDpD4y9LOkzREqw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:53:04 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:53:11 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:53:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 12:53:19 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7AasPvwkZzl6G5YrXt6MSmsDzhbAYRBbWVCKDszBn57gIVLbmBVeX99n7OZuSebSZkL4BDKCZ8o8eFrBRXns9A==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 17:53:19.728816157 UTC], ["last_sign_in_at", 2020-05-21 17:52:49.555366 UTC], ["sign_in_count", 7], ["updated_at", 2020-05-21 17:53:19.729788135 UTC], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 127ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:53:19 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 12:54:16 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:54:17 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 12:54:25 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:05:36 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:05:54 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:05:58 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:06:00 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.7ms)
+  Rendered posts/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 13:06:03 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/3" for 127.0.0.1 at 2020-05-21 13:06:27 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UlmqSGWYnWkSMvQIaUdLMn8L6uPeQsGfTSG9n63LKQ4J7n8lrJLyBQObnuFwMrwXE7YBvAW0YBu4ZqbG2e9h7A==", "post"=>{"status"=>"1", "title"=>"Kevin probando", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 1], ["updated_at", 2020-05-21 18:06:27.495779181 UTC], ["id", 3]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 10ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:06:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 13:06:31 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms)
+  Rendered posts/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:07:00 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 13:07:03 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qfJNbARjOWsPxz+1uMb0Rzv808VM0swgyVC+dZc0ecP3icPGh08wTk9tCWiKPbPwIhOcEgHk8KZPIf4iMff+hw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:07:03 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:07:05 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:09:39 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:09:44 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:09:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:09:50 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OvWYJW98H5gwZJckut7kotDNq29m7ncDWjlAGxhaAosU+FOC1FoQflPiwa3stx3cOOcXF0V+Qb/XCwVDY/O+Jg==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 18:09:50.545085589 UTC], ["last_sign_in_at", 2020-05-21 17:53:19.728816 UTC], ["sign_in_count", 8], ["updated_at", 2020-05-21 18:09:50.546025235 UTC], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:09:50 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:09:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered posts/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:09:54 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.3ms)
+  Rendered posts/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:14:58 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:15:01 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.4ms)
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-05-21 13:15:04 -0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.4ms)
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-05-21 13:15:41 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xIPxig/zPnYICrwL1azgX/IEZ7KYOOgWYRZMNCKvj9sLXCki/WPKzFK0yNDVclVwfgaamYmMu6Vl7krqRb+Xww==", "post"=>{"status"=>"0", "title"=>"Prueba 2", "body"=>"Hola amiguitos"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Prueba 2"], ["body", "Hola amiguitos"], ["created_at", 2020-05-21 18:15:41.873113959 UTC], ["updated_at", 2020-05-21 18:15:41.873113959 UTC], ["status", 0]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 16ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2020-05-21 13:15:41 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.6ms)
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:15:45 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 13:15:47 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lx4Nvfkwi9hrzm/aRM1b2hARJpKuJg22QlfNQ314CeFYwdUVC6B/YjFwGwFEE+71nBPbub+SXgVGr8udGmgR+Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:15:47 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:15:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:15:52 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"udgZ/k8Kw5sUwzK6FMeywxMGo8XCcLGpkRHonFrfZ8kgVNNEJ1qjfLm+y0Wab4rxVe7FTzRs2EGbKRXKcr4FTg==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 18:15:52.472621861 UTC], ["last_sign_in_at", 2020-05-21 18:09:50.545085 UTC], ["sign_in_count", 9], ["updated_at", 2020-05-21 18:15:52.473418866 UTC], ["id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 126ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:15:52 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2020-05-21 13:15:54 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2020-05-21 13:15:55 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/4" for 127.0.0.1 at 2020-05-21 13:16:06 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nBPv82RZQ7itQqnCV1x5FNyfhMeV1BFf3aCo/jKUgTP/g61V2HAQe5yfq/kPi5uOBjKYCH8r42l1FGHnjuIOQg==", "post"=>{"status"=>"1", "title"=>"Prueba 2", "body"=>"Hola amiguitos"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["status", 1], ["updated_at", 2020-05-21 18:16:06.528940514 UTC], ["id", 4]]
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 20ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2020-05-21 13:16:06 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  Rendered posts/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:16:08 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 13:16:11 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U8tvj6CODEUMm11O4BQgGSO63NiAYbVSyOhprgf1uXpdwxpHVwdE1XDlBkJ2opPzz6rikU1l0DxG8/d2tQjDdg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:16:11 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:16:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-05-21 13:16:21 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3VRF7kSsLImFp8UQ7fveMoNyVY5WhGqt8nhJSOhzawS9CqdnQZ4va7MJLVUrclMSpHPa9LZDqh6LbCNziG1//g==", "user"=>{"email"=>"hbtn@hbtn.io", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "hbtn@hbtn.io"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2020-05-21 18:16:21.837303902 UTC], ["last_sign_in_at", 2020-05-21 18:15:52.472621 UTC], ["sign_in_count", 10], ["updated_at", 2020-05-21 18:16:21.838055486 UTC], ["id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:16:21 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:16:23 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  Rendered posts/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3/edit" for 127.0.0.1 at 2020-05-21 13:16:24 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/3" for 127.0.0.1 at 2020-05-21 13:16:36 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KZYZ3XJwGMAvz8XiQYb0BkrrWaah6BjaA3tlx5Ay1lg65P3d/gfWtXkKI3qVmK3sqrnb6YE8kPabVlAbdFkVhA==", "post"=>{"status"=>"0", "title"=>"Prueba 1", "body"=>"Estoy probando la creación de un post"}, "commit"=>"Update Post", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "status" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Prueba 1"], ["status", 0], ["updated_at", 2020-05-21 18:16:36.598780219 UTC], ["id", 3]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 12ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-05-21 13:16:36 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.3ms)
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:16:40 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-05-21 13:16:46 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rBndHzGoGzxSgWYlEnMldKv+U6c33DapeI5vvwPykercb7bhoFFv/veyCs7Os6qfI9gVvqullC0N5y3KOI/gbw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-05-21 13:16:46 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
 
 
