@@ -4,7 +4,7 @@ File to manage of a square
 """
 
 
-class square:
+class Square():
     """Class of a square"""
     width = 0
     height = 0
@@ -29,7 +29,7 @@ class square:
 
 if __name__ == "__main__":
     """ Some comment """
-    s = square(width=12, height=9)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.PermiterOfMySquare())
