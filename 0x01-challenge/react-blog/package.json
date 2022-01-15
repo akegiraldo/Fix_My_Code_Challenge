@@ -14,7 +14,7 @@
     "express-session": "^1.10.4",
     "iso": "^4.0.2",
     "jade": "^1.9.2",
-    "marked": "^1.1.0",
+    "marked": "^4.0.10",
     "moment": "^2.10.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
